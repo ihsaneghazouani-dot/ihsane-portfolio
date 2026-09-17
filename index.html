@@ -28,6 +28,7 @@
     font-size:17px;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
   h1,h2,h3,.display{
     font-family:'Fraunces',serif;
@@ -134,7 +135,11 @@
     .hero-eyebrow{justify-content:center;}
     .hero-sub{margin-left:auto; margin-right:auto;}
     .hero-links{justify-content:center;}
+    .hero-industries{justify-content:center;}
     .hero-photo{max-width:170px;}
+  }
+  @media (max-width:480px){
+    h1.hero-title{ font-size:clamp(30px,9vw,38px); }
   }
 
   /* ---------- SECTION shell ---------- */
@@ -179,6 +184,9 @@
   .case-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:64px; }
   .case h3.big{ font-size:clamp(26px,3vw,34px); font-weight:400; margin-bottom:18px; }
   .case p{ color:var(--ink-soft); font-size:16px; margin:0 0 16px; max-width:56ch;}
+  .case ul{ margin:0 0 16px; padding-left:18px; color:var(--ink-soft); max-width:56ch; }
+  .case li{ margin-bottom:8px; }
+  .case li strong{ color:var(--ink); font-weight:600; }
   .case .metaquote{
     font-family:'Fraunces',serif; font-style:italic; font-size:19px;
     border-left:2px solid var(--brass); padding-left:18px; margin:26px 0;
@@ -239,6 +247,7 @@
   .data-card .persona{ font-size:12px; padding:5px 10px; }
   @media (max-width:820px){ .data-grid{ grid-template-columns:1fr; gap:36px; } }
   .mini-stats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 20px; }
+  @media (max-width:400px){ .mini-stats{ grid-template-columns:1fr; } }
   .mini-stat .num{ font-family:'Fraunces',serif; font-size:24px; color:var(--brass); line-height:1.1; }
   .mini-stat .label{ font-size:11.5px; color:var(--ink-soft); margin-top:3px; }
 
@@ -260,12 +269,16 @@
   .edu-row .school{ color:var(--ink-soft); }
   .edu-row .years{ color:var(--ink-soft); font-size:14px; white-space:nowrap; }
   .learning-note{ margin-top:26px; font-size:14.5px; color:var(--brass); }
+  @media (max-width:560px){
+    .edu-row{ flex-direction:column; gap:4px; }
+    .edu-row .years{ font-size:13.5px; }
+  }
 
   /* ---------- CONTACT / FOOTER ---------- */
   footer{ border-top:1px solid var(--ink); padding:70px 0 50px; }
   footer .wrap{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:30px;}
-  footer h2{ font-size:clamp(22px,3vw,40px); font-weight:400; max-width:48ch; white-space:nowrap; }
-  @media (max-width:720px){ footer h2{ white-space:normal; max-width:14ch; } }
+  footer h2{ font-size:clamp(20px,2.6vw,40px); font-weight:400; max-width:48ch; white-space:nowrap; }
+  @media (max-width:900px){ footer h2{ white-space:normal; max-width:26ch; } }
   .contact-links{ display:flex; flex-direction:column; gap:10px; font-size:15px; }
   .contact-links a{ text-decoration:none; }
   .fine-print{ margin-top:60px; font-size:13px; color:var(--ink-soft); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
@@ -322,7 +335,7 @@
     <blockquote data-fr='« Ce que j’apprécie le plus dans le Product, c’est d’être proche des personnes qui l’utilisent — comprendre leur contexte, poser les bonnes questions et découvrir ce dont elles ont vraiment besoin. »'>
       "What I enjoy most about Product is getting close to the people who use it — understanding their context, asking the right questions, and uncovering what they actually need."
     </blockquote>
-    <div class="attribution" data-fr='Personal shoppers, équipes de vente, équipes service client, conseillers en art, passagers et collectionneurs : j’ai travaillé avec des profils très différents et j’ai toujours pris le temps de mener des recherches utilisateurs pour mieux comprendre leurs besoins, leurs usages et leurs attentes. Ces échanges ont façonné ma manière de cadrer les problèmes, de challenger les hypothèses et de transformer des insights en produits et expériences qui font sens dans la vraie vie.'>Personal shoppers, sales teams, customer service teams, art advisors, travellers and collectors — I've worked with all of them, often conducting the user research myself. Those conversations have shaped how I frame problems, challenge assumptions and turn insights into products and experiences that make sense in the real world.</div>
+    <div class="attribution" data-fr='Personal shoppers, équipes de vente, équipes service client, conseillers en art, passagers et collectionneurs : j’ai travaillé avec des profils très différents et j’ai toujours pris le temps de mener des recherches utilisateurs pour mieux comprendre leurs besoins, leurs usages et leurs attentes. Ces échanges ont façonné ma manière de cadrer les problèmes, de challenger les hypothèses et de transformer des insights en produits et expériences qui répondent réellement à leurs besoins.'>Personal shoppers, sales teams, customer service teams, art advisors, travellers and collectors — I've worked with all of them, often conducting the user research myself. Those conversations have shaped how I frame problems, challenge assumptions and turn insights into products and experiences that make sense in the real world.</div>
     <div class="quality-row">
       <div class="quality" data-fr='<strong>Curieuse</strong>J’aime comprendre de nouveaux sujets, explorer les usages et apprendre en continu.'><strong>Curious</strong>I love understanding new topics, exploring usage, and learning continuously.</div>
       <div class="quality" data-fr='<strong>À l’écoute</strong>Je pars des besoins réels des utilisateurs pour comprendre les problèmes avant de chercher les solutions.'><strong>Attentive</strong>I start from users' real needs to understand the problems before looking for solutions.</div>
@@ -362,7 +375,7 @@
           <li data-fr='<strong>Définition et pilotage</strong> de la roadmap produit d’une nouvelle plateforme web, accompagnant la transition d’une application mobile vers un produit web et l’introduction d’un modèle économique par abonnement, en collaboration avec la CPO, la Product Designer et l’équipe Engineering.'><strong>Owned the roadmap and delivery</strong> of a major product shift — from a mobile app to a new website with a new subscription model — working closely with the CPO, design and engineering teams.</li>
           <li data-fr='<strong>Pilotage</strong> d’un POC IA, en collaboration avec un Senior AI Engineer, autour d’un <strong>AI Art ID</strong> permettant d’identifier et de rapprocher artistes et collectionneurs.'><strong>Partnered</strong> with a senior AI engineer to prototype an <strong>AI Art ID</strong> matching artists and collectors based on visual and stylistic signals.</li>
           <li data-fr='<strong>Exploration</strong> des capacités des LLM pour prototyper de nouveaux modes de recherche et de découverte d’œuvres, avec une approche centrée sur les usages et les comportements des collectionneurs.'><strong>Explored</strong> LLMs to prototype a new way to discover and search for artwork, rethinking more broadly how collectors search for and discover pieces.</li>
-          <li data-fr='<strong>Conduite de la discovery</strong> auprès de collectionneurs et conseillers en art afin d’identifier leurs besoins, définir la stratégie de l’expérience des abonnés et déterminer les cas d’usage à forte valeur pour l’IA.'><strong>Led</strong> research with collectors and art advisors to shape the strategy for the subscribed collector experience and define where AI could play a role. <a href="#docent">See the case study below</a>.</li>
+          <li data-fr='<strong>Conduite de la discovery</strong> auprès de collectionneurs et conseillers en art afin d’identifier leurs besoins, définir la stratégie de l’expérience des abonnés et déterminer les cas d’usage à forte valeur pour l’IA. <a href="#docent">Voir l’étude de cas ci-dessous</a>.'><strong>Led</strong> research with collectors and art advisors to shape the strategy for the subscribed collector experience and define where AI could play a role. <a href="#docent">See the case study below</a>.</li>
         </ul>
       </div>
     </div>
@@ -681,10 +694,10 @@
     </div>
     <p class="edu-intro" data-fr='Après trois années en école d’ingénieur, j’ai choisi de me réorienter vers la <strong>mode et le marketing</strong>, un parcours qui m’a ensuite menée vers la tech et le Product Management.'>Three years into an engineering degree, I chose to switch paths toward <strong>fashion and marketing</strong> — a path that later led me into tech and product management.</p>
     <p class="edu-intro" data-fr='Cette double culture — <strong>business, expérience client et technologie</strong> — continue de guider ma façon d’aborder le produit : comprendre les usages, identifier les vrais problèmes à résoudre et travailler avec les équipes pour transformer ces insights en produits utiles.'>That dual background — <strong>business, customer experience, and technology</strong> — still shapes how I approach product today: understanding usage, identifying the real problems worth solving, and working with teams to turn those insights into useful products.</p>
-    <div class="edu-row"><div><strong data-fr='Master Marketing &amp; Management'>MSc Marketing & Management</strong><div class="school">École LISAA, Paris</div></div><div class="years">2015 – 2017</div></div>
+    <div class="edu-row"><div><strong data-fr='Mastère Management de la Mode et du Luxe'>MSc Fashion & Luxury Management</strong><div class="school">École LISAA, Paris</div></div><div class="years">2015 – 2017</div></div>
     <div class="edu-row"><div><strong data-fr='Licence Fashion Design &amp; Technology'>BA Fashion Design & Technology</strong><div class="school">IFA Paris</div></div><div class="years">2012 – 2015</div></div>
-    <div class="edu-row"><div><strong data-fr='Ingénierie — Urbanisme'>Engineering — Urban Planning</strong><div class="school">Polytech Tours</div></div><div class="years">2011 – 2012</div></div>
-    <div class="edu-row"><div><strong data-fr='Mathématiques, Informatique &amp; Physique'>Mathematics, Computer Science & Physics</strong><div class="school">Polytech Lille</div></div><div class="years">2009 – 2011</div></div>
+    <div class="edu-row"><div><strong data-fr='Ingénierie — Aménagement du Territoire'>Engineering — Urban Planning</strong><div class="school">Polytech Tours</div></div><div class="years">2011 – 2012</div></div>
+    <div class="edu-row"><div><strong data-fr='Mathématiques, Informatique, Mécanique &amp; Physique'>Mathematics, Computer Science & Physics</strong><div class="school">Polytech Lille</div></div><div class="years">2009 – 2011</div></div>
     <div class="cert-block">
       <div class="cert-label" data-fr='Certifications'>Certifications</div>
       <div class="fact-row">
