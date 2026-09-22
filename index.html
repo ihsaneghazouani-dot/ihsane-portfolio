@@ -220,6 +220,43 @@
   p.cta-note{ margin-top:28px; font-size:13.5px; font-style:italic; color:var(--ink-soft); max-width:52ch; }
   p.case-intro{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(19px,2.2vw,24px); color:var(--ink); max-width:60ch; margin:18px 0 32px; line-height:1.4; }
 
+  /* ---------- APPROACH STEP-FLOW ---------- */
+  .approach{ margin:56px 0 64px; }
+  .approach > h3.big{ margin-bottom:32px; }
+  .approach-steps{ display:grid; grid-template-columns:repeat(5,1fr); gap:30px; }
+  .approach-step{ position:relative; }
+  .approach-num{
+    font-family:'Fraunces',serif; font-size:40px; color:var(--brass);
+    line-height:1; margin-bottom:12px; transition:color .2s ease;
+  }
+  .approach-label{
+    font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--ink); margin-bottom:8px;
+  }
+  .approach-step p{ font-size:14px; color:var(--ink-soft); margin:0; max-width:24ch; }
+  .approach-step:hover .approach-num{ color:var(--oxblood); }
+  .approach-step:not(:last-child)::before{
+    content:''; position:absolute; top:17px; right:-19px; width:0; height:0;
+    border-top:4px solid transparent; border-bottom:4px solid transparent; border-left:6px solid var(--brass);
+  }
+  .approach-step:not(:last-child)::after{
+    content:''; position:absolute; top:20px; right:-17px; width:18px; height:0;
+    border-top:1.5px solid var(--brass);
+  }
+  @media (max-width:820px){
+    .approach-steps{ grid-template-columns:1fr; gap:38px; }
+    .approach-step p{ max-width:none; }
+    .approach-step:not(:last-child)::before{
+      top:auto; right:auto; bottom:-27px; left:15px;
+      border-top:6px solid var(--brass); border-bottom:none;
+      border-left:4px solid transparent; border-right:4px solid transparent;
+    }
+    .approach-step:not(:last-child)::after{
+      top:auto; right:auto; bottom:-23px; left:19px; width:0; height:19px;
+      border-top:none; border-left:1.5px solid var(--brass);
+    }
+  }
+
   /* ---------- SPLIT BLOCK (Luxury & Omnichannel) ---------- */
   .split-block{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center; }
   .split-block + .split-block{ margin-top:72px; padding-top:72px; border-top:1px solid var(--line); }
@@ -293,6 +330,7 @@
       <li><a href="#career" data-fr='Parcours'>Career</a></li>
       <li><a href="#docent" data-fr='Recherche UX &amp; Stratégie'>UX Research &amp; Strategy</a></li>
       <li><a href="#omnichannel" data-fr='Luxe &amp; Omnicanal'>Luxury &amp; Omnichannel</a></li>
+      <li><a href="#innovation" data-fr='Innovation'>Innovation</a></li>
       <li><a href="#data-ai" data-fr='Data'>Data</a></li>
       <li><a href="#ai-craft" data-fr='IA &amp; Product Craft'>AI &amp; Product Craft</a></li>
       <li><a href="#skills" data-fr='Compétences'>Skills</a></li>
@@ -558,6 +596,73 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="case" id="innovation">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker" data-fr='Étude de cas'>Featured case study</div>
+      <h2 data-fr='Innovation'>Innovation</h2>
+    </div>
+    <p class="case-intro" data-fr='Explorer, appliquer et l’intégrer au produit.'>Scouting, applying, and building it into the product.</p>
+    <p data-fr='Dans chaque rôle, un même fil conducteur sous-tend le travail produit : <strong>suivre ce qui émerge et le transformer en quelque chose qui change réellement l’expérience client.</strong>'>Across every role, the same thread runs underneath the product work: <strong>tracking what's emerging and turning it into something that actually changes the customer experience.</strong></p>
+    <p data-fr='L’innovation non pas comme un slide deck, mais <strong>comme quelque chose que les gens utilisent.</strong>'>Not innovation as a slide deck, but <strong>innovation as something people use.</strong></p>
+
+    <div class="approach">
+      <h3 class="big" data-fr='Ma méthode'>My approach</h3>
+      <div class="approach-steps">
+        <div class="approach-step">
+          <div class="approach-num">01</div>
+          <div class="approach-label" data-fr='Repérer'>Spot</div>
+          <p data-fr='Suivre les technologies, tendances, comportements et nouveaux modèles économiques émergents.'>Track emerging technologies, trends, behaviours and new business models.</p>
+        </div>
+        <div class="approach-step">
+          <div class="approach-num">02</div>
+          <div class="approach-label" data-fr='Découvrir'>Discover</div>
+          <p data-fr='Transformer les signaux en opportunités en comprenant le client, le problème et le contexte.'>Turn signals into opportunities by understanding the customer, the problem and the context.</p>
+        </div>
+        <div class="approach-step">
+          <div class="approach-num">03</div>
+          <div class="approach-label" data-fr='Connecter'>Connect</div>
+          <p data-fr='Réunir les bonnes personnes, technologies, startups et compétences pour explorer l’opportunité.'>Bring together the right people, technologies, startups and capabilities to explore the opportunity.</p>
+        </div>
+        <div class="approach-step">
+          <div class="approach-num">04</div>
+          <div class="approach-label" data-fr='Prototyper'>Prototype</div>
+          <p data-fr='Rendre l’idée tangible à travers des expérimentations, des concepts UX/UI et des prototypes rapides assistés par l’IA.'>Make the idea tangible through experiments, UX/UI concepts and rapid AI-assisted prototypes.</p>
+        </div>
+        <div class="approach-step">
+          <div class="approach-num">05</div>
+          <div class="approach-label" data-fr='Construire'>Build</div>
+          <p data-fr='Transformer les opportunités validées en expériences, fonctionnalités et produits réellement utilisés.'>Turn validated opportunities into experiences, features and products that people actually use.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="big" data-fr='Estée Lauder — où tout a commencé'>Estée Lauder — where it started</h3>
+    <p data-fr='En tant que <strong>Coordinatrice Innovation</strong>, j’ai suivi les tendances, technologies et innovations consommateurs émergentes dans l’univers de la beauté, en nourrissant cette veille pour alimenter des projets d’innovation corporate sur plusieurs marques et marchés du groupe.'>As <strong>Innovation Coordinator</strong>, I tracked emerging trends, technologies and consumer innovations across the beauty industry, feeding that intelligence into corporate innovation projects spanning multiple brands and markets across the group.</p>
+
+    <h3 class="big" data-fr='Galeries Lafayette — construire une pratique de l’innovation'>Galeries Lafayette — building an innovation practice</h3>
+    <p data-fr='En lien avec <strong>Lafayette Plug &amp; Play</strong>, j’ai recueilli les besoins d’innovation des parties prenantes de toute l’organisation et les ai mis en relation avec des startups et solutions émergentes pertinentes.'>Working with <strong>Lafayette Plug &amp; Play</strong>, I gathered innovation needs from stakeholders across the organization and connected them with relevant startups and emerging solutions.</p>
+    <p data-fr='En mission finale, j’ai mené un <strong>audit de l’innovation à l’échelle du groupe</strong>, co-construit la stratégie d’innovation qui en a résulté, et lancé un <strong>POC de 10 Ambassadeurs</strong> pour aider à ancrer les pratiques d’innovation dans l’ensemble de l’organisation.'>As a final mission, I led a <strong>group-wide innovation audit</strong>, co-developed the resulting innovation strategy, and launched a <strong>10-Ambassadors POC</strong> to help embed innovation practices across the organization.</p>
+
+    <h3 class="big" data-fr='Farfetch — innover l’expérience de clienteling'>Farfetch — innovating the clienteling experience</h3>
+    <p data-fr='Chez <strong>Farfetch Platform Solutions</strong>, innover signifiait repenser ce qu’un vendeur pouvait faire avec la technologie — et comment le retail digital et physique pouvaient fonctionner ensemble.'>At <strong>Farfetch Platform Solutions</strong>, innovation meant rethinking what a sales associate could do with technology — and how digital and physical retail could work together.</p>
+    <p data-fr='J’ai travaillé sur :'>I worked on:</p>
+    <ul>
+      <li data-fr='<strong>La connexion entre e-commerce et clienteling</strong>, permettant aux personal shoppers de reprendre la navigation en ligne d’un client et de la prolonger en magasin.'><strong>Connecting e-commerce and clienteling</strong>, enabling personal shoppers to pick up a client's online browsing journey and extend it in-store.</li>
+      <li data-fr='<strong>L’intégration du Connected Mirror à l’application de clienteling</strong>, en intégrant l’expérience de cabine d’essayage augmentée directement dans l’outil de travail existant du vendeur.'><strong>Integrating the Connected Mirror into the clienteling app</strong>, bringing the augmented fitting-room experience into the sales associate's existing workflow.</li>
+      <li data-fr='<strong>La construction d’un parcours de live chat</strong> connectant les clients en ligne à des personal shoppers en magasin, rendant l’expertise du magasin physique accessible de partout.'><strong>Building a live-chat journey</strong> connecting online customers with in-store personal shoppers, making the expertise of the physical store accessible from anywhere.</li>
+    </ul>
+
+    <h3 class="big" data-fr='Docent — innover la découverte elle-même'>Docent — innovating discovery itself</h3>
+    <p data-fr='Chez <strong>Docent</strong>, l’innovation est devenue une question de repenser la façon dont les collectionneurs découvrent et comprennent l’art — en utilisant l’IA pour aller au-delà de la navigation classique par catalogue.'>At <strong>Docent</strong>, innovation became about rethinking how collectors discover and understand art — using AI to move beyond traditional catalogue browsing.</p>
+    <p data-fr='J’ai exploré :'>I explored:</p>
+    <ul>
+      <li data-fr='<strong>La recherche et la découverte propulsées par les LLM</strong>, en prototypant de nouvelles façons pour les collectionneurs d’explorer un catalogue au-delà des filtres par mot-clé et par catégorie.'><strong>LLM-powered search and discovery</strong>, prototyping new ways for collectors to explore a catalogue beyond keyword and category filters.</li>
+      <li data-fr='<strong>L’IA comme couche de discovery et d’aide à la décision</strong>, faisant émerger des connexions et des possibilités qu’un collectionneur n’aurait pas pensé à rechercher — tout en le laissant pleinement maître de la décision.'><strong>AI as a discovery and decision-support layer</strong>, surfacing connections and possibilities a collector might not have thought to search for — while keeping the collector firmly in control of the decision.</li>
+    </ul>
   </div>
 </section>
 
